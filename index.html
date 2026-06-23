@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ДЕХРОНО — MEMENTO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="boot"><div class="blogo">ДЕХРОНО OS</div><div class="blines"></div><div class="bbar"><i></i></div></div>
+<div id="chstatic"></div>
+<div id="dvd"><div class="fly">ДЕХРОНО</div></div>
+<div class="desktop">
+  <aside class="sidebar">
+    <div class="logo">ДЕХРОНО</div>
+    <nav class="menu">
+      <a href="#about">О НАС</a><a href="#charms">ШАРМЫ</a><a href="#jewelry">УКРАШЕНИЯ</a>
+    </nav>
+  </aside>
+  <img class="cracked" src="assets/images/sidebar-cracked-screen.jpg" alt="">
+  <button id="snd">ЗВУК: ВКЛ</button>
+
+  <main class="stage">
+    <!-- ВИД О НАС (открывается по клику на «О НАС») -->
+    <div id="about-view" class="viewscreen">
+      <div class="ab-bar"><span class="ab-title">О НАС</span><span class="x" id="about-close">✕</span></div>
+      <div class="folder afolder" id="about-folder">
+        <img class="ico" src="assets/images/folder-icon.png" alt="папка">
+        <span>Подробная информация</span>
+      </div>
+      <div class="ab-body"><div class="ab-typed"></div><img class="ab-img" src="assets/images/about-collage.jpg" alt="О нас"></div>
+    </div>
+    <!-- ПАПКА -->
+    <div class="folder">
+      <img class="ico" src="assets/images/folder-icon.png" alt="папка">
+      <span>Детство</span>
+    </div>
+
+    <!-- ОКНА -->
+    <div class="win" id="alert">
+      <div class="bar"><span>??????</span><span class="x">✕</span></div>
+      <div class="body"><div class="warn">⚠️</div><button class="ok">Ок</button></div>
+    </div>
+
+    <div class="win" id="poem">
+      <div class="bar"><span>Ника Турбина</span><span class="x">✕</span></div>
+      <div class="body" id="poemtext"></div>
+    </div>
+
+    <div class="win" id="video">
+      <div class="bar"><span>2004.mp4</span><span class="x">✕</span></div>
+      <div class="screen"><video src="assets/video/2004.mp4" controls preload="metadata" poster="assets/images/video-girl-glasses-poster.jpg"></video><div class="vscan"></div><div class="vnoise"></div></div>
+    </div>
+    <!-- ОКНО-БРАУЗЕР (открывается по «архивные версии») -->
+    <div class="win" id="browser">
+      <div class="bar"><span>дехроно — архив &lt;Internet Explorer&gt;</span><span class="x">✕</span></div>
+      <div class="toolbar">
+        <span class="tb"><i class="bar-tri bar-tri-l"></i></span><span class="tb"><i class="bar-tri bar-tri-r"></i></span><span class="tb">✕</span><span class="tb">⟳</span><span class="tb">⌂</span>
+        <span class="addr" id="b-addr">http://web.archive.org/дехроно/v1.0/index.html</span>
+        <span class="tb go">Go</span>
+      </div>
+      <div class="tabs">
+        <span class="tab active" data-i="0">★ версия 1.0</span>
+        <span class="tab" data-i="1">★ версия 2.0</span>
+      </div>
+      <div class="page" id="b-page">
+        <img class="b-img" data-i="0" src="assets/images/browser-archive-v1.jpg" alt="архив 1">
+        <img class="b-img" data-i="1" src="assets/images/browser-archive-v2.jpg" alt="архив 2" style="display:none">
+      </div>
+      <div class="status" id="b-status"><span class="dot">●</span><span>Готово</span></div>
+    </div>
+    <!-- ПАПКА «ДЕТСТВО» — окно содержимого -->
+    <div class="win" id="childhood">
+      <div class="bar"><span>&#128193; Детство</span><span class="x">✕</span></div>
+      <div class="body" id="c-grid"></div>
+    </div>
+    <!-- ВИД ШАРМЫ -->
+    <div id="charms-view" class="viewscreen">
+      <div class="sh-bar">
+        <span style="font-weight:bold;flex:0 0 auto;">ШАРМЫ</span>
+        <div class="sh-marquee"><span>★ ДЕХРОНО · ШАРМЫ 2004 ★ новая коллекция уже здесь ★ бесплатная доставка от 5000 ₽ ★ собери свой амулет времени ★ −20% на SALE ★ best viewed in 800×600 ★</span></div>
+        <span style="display:flex;gap:12px;align-items:center;flex:0 0 auto;">
+          <span class="cart" id="cart-btn">&#128722; корзина: <b class="cart-count">0</b></span>
+          <span class="x" id="charms-close">✕</span>
+        </span>
+      </div>
+      <div class="grid" id="charm-grid"></div>
+      <div id="cart-toast">+1 ♥ добавлено в корзину</div>
+    </div>
+    <!-- ВИД УКРАШЕНИЯ (заглушка) -->
+    <div id="jewelry-view" class="viewscreen">
+      <div class="jw-bar">
+        <span style="font-weight:bold;flex:0 0 auto;">УКРАШЕНИЯ</span>
+        <div class="sh-marquee"><span>★ ДЕХРОНО · УКРАШЕНИЯ 2004 ★ ручная работа ★ нажми на фото — откроется карточка ★ листай стрелками ◄ ► ★</span></div>
+        <span style="display:flex;gap:12px;align-items:center;flex:0 0 auto;">
+          <span class="cart" id="cart-btn2">&#128722; корзина: <b class="cart-count">0</b></span>
+          <span class="x" id="jewelry-close">✕</span>
+        </span>
+      </div>
+      <div class="jw-stage" id="jw-stage">
+        <img class="jw-photo" id="jw-photo" src="" alt="украшение">
+        <button class="jw-arrow jw-prev" id="jw-prev"><span class="ar"></span></button>
+        <button class="jw-arrow jw-next" id="jw-next"><span class="ar"></span></button>
+        <div class="jw-count" id="jw-count">1 / 6</div>
+        <div class="jw-hint">нажми на фото ↗</div>
+      </div>
+    </div>
+  </main>
+
+  <div class="taskbar"><div class="bar-left">[0.1]<span class="tb-widget tb-visit" style="margin-left:auto;">ПОСЕТИТЕЛЕЙ: <b id="visit">00000000</b></span><span class="tb-widget tb-clock">&#128340; <b id="rclock">00:00:00</b></span></div><div class="bar-right">[архивные версии]&nbsp;&gt;</div></div>
+  <div class="redstrip"></div>
+  <div class="graystrip"></div>
+
+  <div class="scanlines"></div><div class="crt"></div><div class="grain"></div><div class="roll"></div><div class="flicker"></div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
