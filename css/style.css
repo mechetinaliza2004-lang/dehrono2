@@ -1,5 +1,5 @@
-@font-face{font-family:'Just Breathe';src:url('assets/fonts/JustBreathe.woff2') format('woff2'),url('assets/fonts/JustBreathe.ttf') format('truetype');font-display:swap;}
-@font-face{font-family:'Greybeard';src:url('assets/fonts/Greybeard.woff2') format('woff2'),url('assets/fonts/Greybeard.ttf') format('truetype');font-display:swap;}
+@font-face{font-family:'Just Breathe';src:url('../assets/fonts/JustBreathe.woff2') format('woff2'),url('../assets/fonts/JustBreathe.ttf') format('truetype');font-display:swap;}
+@font-face{font-family:'Greybeard';src:url('../assets/fonts/Greybeard.woff2') format('woff2'),url('../assets/fonts/Greybeard.ttf') format('truetype');font-display:swap;}
 
 :root{
   --side: clamp(160px,15vw,230px); --gray:#616166; --green:#03e732;
@@ -34,7 +34,7 @@ body{cursor:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' widt
   user-select:none;pointer-events:none;filter:contrast(1.06);}
 
 .stage{position:absolute;top:0;left:var(--side);right:0;bottom:0;
-  background:url('assets/images/background-stage.jpg') center/cover no-repeat #2a2a2a;overflow:hidden;}
+  background:url('../assets/images/background-stage.jpg') center/cover no-repeat #2a2a2a;overflow:hidden;}
 
 /* кнопка звука */
 #snd{position:absolute;top:22px;left:calc(var(--side) + 10px);z-index:112;background:transparent;color:var(--red);
