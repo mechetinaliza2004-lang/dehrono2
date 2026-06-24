@@ -24,7 +24,7 @@ body{cursor:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' widt
   font-size:clamp(20px,2.7vw,40px);line-height:.92;padding:16px 0 0 16px;text-align:left;letter-spacing:1px;
   text-shadow:1.5px 0 #ff003c66,-1.5px 0 #00f0ff66;}
 .menu{margin-top:clamp(34px,8vh,90px);padding-left:16px;display:flex;flex-direction:column;gap:13px;}
-.menu a{font-family:'Greybeard','Silkscreen',monospace;font-size:14px;color:#000;text-decoration:none;
+.menu a{font-family:'Greybeard','Silkscreen',monospace;font-size:14px;color:#fff;text-decoration:none;
   letter-spacing:2px;text-transform:uppercase;width:max-content;transition:color .12s,text-shadow .12s;}
 .menu a:hover{color:var(--green);text-shadow:1px 0 #ff003c,-1px 0 #00f0ff;}
 .menu a:hover::before{content:'[ ';} .menu a:hover::after{content:' ]';}
@@ -227,8 +227,54 @@ body{cursor:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' widt
 .toolbar .bar-tri{display:inline-block;width:0;height:0;border-style:solid;}
 .toolbar .bar-tri-r{border-width:5px 0 5px 7px;border-color:transparent transparent transparent #000;}
 .toolbar .bar-tri-l{border-width:5px 7px 5px 0;border-color:transparent #000 transparent transparent;}
-@media (max-width:760px){:root{--side:118px;--bar:28px;} #poem{width:220px;left:28%;} #alert{left:38%;width:180px;} #video{left:55%;}}
-@media (prefers-reduced-motion:reduce){.desktop{animation:none;} .roll,.grain{display:none;}}
+/* ===================== RESPONSIVE DESIGN ===================== */
+/* Очень маленькие экраны (мобильные портреты, до 480px) */
+@media (max-width:480px){
+  :root{--side:80px;--bar:24px;}
+  .logo{font-size:16px;}
+  .menu a{font-size:11px;}
+  .sidebar{width:var(--side);}
+  .desktop{left:var(--side);}
+  #about-folder{left:8%;}
+  #poem{width:180px;left:20%;font-size:11px;}
+  #alert{left:30%;width:140px;font-size:10px;}
+  #video{left:50%;width:200px;}
+  .folder{width:80px;}
+  .folder .ico{width:70px;}
+  .folder span{font-size:10px;}
+}
+
+/* Маленькие экраны (мобильные ландшафт, 481-760px) */
+@media (max-width:760px){
+  :root{--side:118px;--bar:28px;}
+  #poem{width:220px;left:28%;}
+  #alert{left:38%;width:180px;}
+  #video{left:55%;}
+  .menu a{font-size:13px;}
+  .folder span{font-size:12px;}
+}
+
+/* Средние экраны (планшеты, 761-1024px) */
+@media (max-width:1024px){
+  :root{--side:160px;--bar:30px;}
+  .logo{font-size:24px;}
+  .menu a{font-size:13px;gap:8px;}
+  .win{font-size:12px;}
+  #charms-view .ch-grid, #jewelry-view .jw-grid{gap:8px;}
+}
+
+/* Большие экраны (десктоп, 1025px и больше) */
+@media (min-width:1025px){
+  :root{--side:200px;--bar:32px;}
+  .logo{font-size:28px;}
+  .menu a{font-size:14px;}
+}
+
+/* Для людей чувствительных к движению */
+@media (prefers-reduced-motion:reduce){
+  .desktop{animation:none;}
+  .roll,.grain{display:none;}
+}
 
 /* ===================== Y2K ANIMATION PACK ===================== */
 /* 1. boot screen */
